@@ -1,2 +1,1 @@
-# --name--
---description--
+# @scp/localization
