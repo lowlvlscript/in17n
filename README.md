@@ -1,1 +1,1 @@
-# @scp/localization
+# @scp/in17n

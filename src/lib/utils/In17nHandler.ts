@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { IInternationalization, SapphireClient } from '@sapphire/framework';
-import { Collection } from 'discord.js';
+import { Collection, Message } from 'discord.js';
 import { getRootDirectory } from '@sapphire/framework/dist/lib/utils/RootDir';
-import i18next, { InitOptions, TFunction } from 'i18next';
+import i18next, { InitOptions, StringMap, TFunction, TOptions } from 'i18next';
 import Backend, { i18nextFsBackend } from 'i18next-fs-backend';
 import { join } from 'path';
 import { mergeDefault } from '@sapphire/utilities';
 import { promises } from 'fs';
 
-export class I21NextHandler implements IInternationalization {
+export class In17nHandler implements IInternationalization {
 
 	public languagesLoaded = false;
 	public languages!: Collection<string, TFunction>;
@@ -38,6 +38,16 @@ export class I21NextHandler implements IInternationalization {
 
 		this.languages = new Collection(languages.map(item => [item, i18next.getFixedT(item)]));
 		this.languagesLoaded = true;
+	}
+
+	public resolveNameFromMessage(message: Message): string {
+		return message.guild?.preferredLocale ?? this.client.options.i18n?.defaultName ?? 'en-US';
+	}
+
+	public resolveValue(name: string, key: string, replace: Record<string, unknown>, options: TOptions<StringMap> = {}): Awaited<string> {
+		const language = this.languages.get(name)!;
+
+		return language(key, { ...options, replace });
 	}
 
 	private async walkLanguageDirectory(dir: string, namespaces: string[] = [], folderName = '') {
