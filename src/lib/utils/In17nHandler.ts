@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { IInternationalization, SapphireClient } from '@sapphire/framework';
+import { IInternationalization, SapphireClient, UserError } from '@sapphire/framework';
 import { Collection, Message } from 'discord.js';
 import { getRootDirectory } from '@sapphire/framework/dist/lib/utils/RootDir';
 import i18next, { InitOptions, StringMap, TFunction, TOptions } from 'i18next';
@@ -40,12 +40,16 @@ export class In17nHandler implements IInternationalization {
 		this.languagesLoaded = true;
 	}
 
-	public resolveNameFromMessage(message: Message): string {
-		return message.guild?.preferredLocale ?? this.client.options.i18n?.defaultName ?? 'en-US';
+	public async resolveNameFromMessage(message: Message) {
+		const lang = await this.client.fetchLanguage(message);
+		return lang ?? message.guild?.preferredLocale ?? this.client.options.i18n?.defaultName ?? 'en-US';
 	}
 
-	public resolveValue(name: string, key: string, replace: Record<string, unknown>, options: TOptions<StringMap> = {}): Awaited<string> {
-		const language = this.languages.get(name)!;
+	public resolveValue(name: string, key: string, replace: Record<string, unknown>, options: TOptions<StringMap> = {}): Promise<string> {
+		if (!this.languagesLoaded) throw new UserError('In17nLanguagesNotLoaded', 'Cannot call this method until In17nHandler#init has been called');
+
+		const language = this.languages.get(name);
+		if (!language) throw new UserError('In17nLanguageNotFound', 'Invalid language provided');
 
 		return language(key, { ...options, replace });
 	}
