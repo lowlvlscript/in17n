@@ -3,7 +3,6 @@ import { Awaited } from '@sapphire/pieces';
 import type { ClientOptions, Message } from 'discord.js';
 import { InitOptions } from 'i18next';
 import { i18nextFsBackend } from 'i18next-fs-backend';
-import { join } from 'path';
 import { I21NextHandler } from './utils/I21NextHandler';
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
@@ -13,15 +12,15 @@ export class I21Next implements Plugin {
 		this.i18n = new I21NextHandler(this);
 	}
 
-	public static preLoginHook(this: SapphireClient, _options: ClientOptions) {
-		this.events.registerPath(join(__dirname, '..', 'events'));
+	public static async preLoginHook(this: SapphireClient, _options: ClientOptions) {
+		await (this.i18n as I21NextHandler).init();
 	}
 
 	public static [preInitialization](scopedThis: SapphireClient, options: ClientOptions): void {
 		return this.preInitializationHook.call(scopedThis, options);
 	}
 
-	public static [preLogin](scopedThis: SapphireClient, options: ClientOptions): void {
+	public static [preLogin](scopedThis: SapphireClient, options: ClientOptions): Promise<void> {
 		return this.preLoginHook.call(scopedThis, options);
 	}
 
@@ -39,7 +38,7 @@ declare module 'discord.js' {
 
 declare module '@sapphire/framework' {
 	interface ClientInternationalizationOptions {
-		backend: i18nextFsBackend.i18nextFsBackendOptions;
-		i18next: InitOptions;
+		backend?: i18nextFsBackend.i18nextFsBackendOptions;
+		i18next?: InitOptions;
 	}
 }
