@@ -1,8 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
+import { SapphireClient } from '@sapphire/framework';
+
 export class I21NextHandler {
 
-	public constructor(directory: string) {
-		console.log(directory);
+	public constructor(private readonly client: SapphireClient) {
 	}
 
 }

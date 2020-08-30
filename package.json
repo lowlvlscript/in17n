@@ -17,8 +17,9 @@
 		"sversion": "yarn standard-version"
 	},
 	"dependencies": {
+		"@sapphire/utilities": "sapphire-project/utilities#build-utilities",
 		"i18next": "^19.7.0",
-		"i18next-node-fs-backend": "^2.1.3"
+		"i18next-fs-backend": "^1.0.7"
 	},
 	"peerDependencies": {
 		"@sapphire/framework": "github:sapphire-project/framework#build",
@@ -29,7 +30,7 @@
 		"@commitlint/config-conventional": "^9.1.2",
 		"@quantumly/eslint-config": "^1.1.0",
 		"@sapphire/framework": "github:sapphire-project/framework#build",
-		"@types/i18next-node-fs-backend": "^2.1.0",
+		"@types/i18next-fs-backend": "^1.0.0",
 		"@types/jest": "^26.0.10",
 		"@types/module-alias": "^2.0.0",
 		"@types/node": "^14.6.0",

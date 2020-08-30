@@ -1,5 +1,8 @@
 import { Plugin, preInitialization, preLogin, SapphireClient } from '@sapphire/framework';
-import type { ClientOptions } from 'discord.js';
+import { Awaited } from '@sapphire/pieces';
+import type { ClientOptions, Message } from 'discord.js';
+import { InitOptions } from 'i18next';
+import { i18nextFsBackend } from 'i18next-fs-backend';
 import { join } from 'path';
 import { I21NextHandler } from './utils/I21NextHandler';
 
@@ -7,7 +10,7 @@ import { I21NextHandler } from './utils/I21NextHandler';
 export class I21Next implements Plugin {
 
 	public static preInitializationHook(this: SapphireClient, _options: ClientOptions) {
-		this.localization = new I21NextHandler('');
+		this.i18n = new I21NextHandler(this);
 	}
 
 	public static preLoginHook(this: SapphireClient, _options: ClientOptions) {
@@ -24,8 +27,19 @@ export class I21Next implements Plugin {
 
 }
 
+export interface I21NextFetchLanguage {
+	(message: Message): Awaited<string | null>;
+}
+
 declare module 'discord.js' {
 	interface Client {
-		localization: I21NextHandler;
+		fetchLanguage: I21NextFetchLanguage;
+	}
+}
+
+declare module '@sapphire/framework' {
+	interface ClientInternationalizationOptions {
+		backend: i18nextFsBackend.i18nextFsBackendOptions;
+		i18next: InitOptions;
 	}
 }
