@@ -1,14 +1,14 @@
 import { Plugin, postInitialization, preInitialization, SapphireClient } from '@sapphire/framework';
 import type { ClientOptions } from 'discord.js';
 import { join } from 'path';
-import { LocalizationHandler } from './utils/LocalizationHandler';
+import { I21NextHandler } from './utils/I21NextHandler';
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
-export class Localization implements Plugin {
+export class I21Next implements Plugin {
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public static preInitializationHook(this: SapphireClient, _options?: ClientOptions) {
-		this.localization = new LocalizationHandler('');
+		this.localization = new I21NextHandler('');
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -28,6 +28,6 @@ export class Localization implements Plugin {
 
 declare module 'discord.js' {
 	interface Client {
-		localization: LocalizationHandler;
+		localization: I21NextHandler;
 	}
 }
