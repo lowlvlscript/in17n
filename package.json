@@ -1,0 +1,75 @@
+{
+	"name": "@scp/in17n",
+	"description": "",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"author": "QuantumlyTangled <yo@quantumlytangled.com> (https://quantumlytangled.com)",
+	"scripts": {
+		"lint": "eslint src --ext ts --fix",
+		"update": "yarn upgrade-interactive --latest",
+		"build": "tsc -b src",
+		"clean": "tsc -b src --clean",
+		"watch": "tsc -b src -w",
+		"test": "jest",
+		"test:coverage": "jest --coverage",
+		"sversion": "yarn standard-version"
+	},
+	"dependencies": {
+		"@sapphire/utilities": "sapphire-project/utilities#build-utilities",
+		"i18next": "^19.7.0",
+		"i18next-fs-backend": "^1.0.7"
+	},
+	"peerDependencies": {
+		"@sapphire/framework": "github:sapphire-project/framework#build",
+		"discord.js": "12.x"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^9.1.2",
+		"@commitlint/config-conventional": "^9.1.2",
+		"@quantumly/eslint-config": "^1.1.0",
+		"@sapphire/framework": "github:sapphire-project/framework#build",
+		"@types/i18next-fs-backend": "^1.0.0",
+		"@types/jest": "^26.0.10",
+		"@types/module-alias": "^2.0.0",
+		"@types/node": "^14.6.0",
+		"@types/ws": "^7.2.6",
+		"@typescript-eslint/eslint-plugin": "^3.10.1",
+		"@typescript-eslint/parser": "^3.10.1",
+		"copyfiles": "^2.3.0",
+		"cz-conventional-changelog": "^3.2.1",
+		"discord.js": "^12.3.1",
+		"eslint": "^7.7.0",
+		"husky": "^4.2.5",
+		"jest": "^26.4.2",
+		"jest-circus": "^26.4.2",
+		"lint-staged": "^10.2.13",
+		"standard-version": "^9.0.0",
+		"ts-jest": "^26.3.0",
+		"typescript": "^4.0.2"
+	},
+	"engines": {
+		"node": ">=14",
+		"npm": ">=6"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "yarn lint-staged"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.ts": [
+			"eslint --fix --ext ts"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}
