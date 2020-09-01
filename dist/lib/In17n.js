@@ -11,11 +11,11 @@ class In17n {
     static async preLoginHook(_options) {
         await this.i18n.init();
     }
-    static [framework_1.preInitialization](scopedThis, options) {
-        return this.preInitializationHook.call(scopedThis, options);
+    static [framework_1.preInitialization](_options) {
+        this.i18n = new In17nHandler_1.In17nHandler(this);
     }
-    static [framework_1.preLogin](scopedThis, options) {
-        return this.preLoginHook.call(scopedThis, options);
+    static async [framework_1.preLogin](_options) {
+        await this.i18n.init();
     }
 }
 exports.In17n = In17n;

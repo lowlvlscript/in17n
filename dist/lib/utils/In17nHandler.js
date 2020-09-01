@@ -50,7 +50,7 @@ class In17nHandler {
         const language = this.languages.get(name);
         if (!language)
             throw new framework_1.UserError('In17nLanguageNotFound', 'Invalid language provided');
-        return language(key, { ...options, replace });
+        return language(key, utilities_1.mergeDefault({ defaultValue: language('default:DEFAULT', { fallbackLng: 'en-US', replace: { key } }), replace }, options));
     }
     async walkLanguageDirectory(dir, namespaces = [], folderName = '') {
         const files = await fs_1.promises.readdir(dir);

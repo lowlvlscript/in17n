@@ -6,8 +6,8 @@ import { i18nextFsBackend } from 'i18next-fs-backend';
 export declare class In17n implements Plugin {
     static preInitializationHook(this: SapphireClient, _options: ClientOptions): void;
     static preLoginHook(this: SapphireClient, _options: ClientOptions): Promise<void>;
-    static [preInitialization](scopedThis: SapphireClient, options: ClientOptions): void;
-    static [preLogin](scopedThis: SapphireClient, options: ClientOptions): Promise<void>;
+    static [preInitialization](this: SapphireClient, _options: ClientOptions): void;
+    static [preLogin](this: SapphireClient, _options: ClientOptions): Promise<void>;
 }
 export interface In17nFetchLanguage {
     (message: Message): Awaited<string | null>;

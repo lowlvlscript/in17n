@@ -912,23 +912,18 @@
         "affectsGlobalScope": false
       },
       "../src/lib/utils/In17nHandler.ts": {
-        "version": "29c34b83f898e05416cc25a3def473747a67fd0e41df7c27bb48a3d1c5ed11c0",
+        "version": "2b2936b0a6df3ad9dc5fc0137f32347bf6a380fd533043b2a145d3528f34806f",
         "signature": "8394a1fdb2ae07f44e5c6622f23c216e411d8716ceb4615eff801208e511f9ff",
         "affectsGlobalScope": false
       },
       "../src/lib/In17n.ts": {
-        "version": "3b0cb52a1cd2be78214e9b082837ef387627100b6d16ce74f2f2fb52e63a7c63",
-        "signature": "46445157ccc26b30aa0a30e27e66d86b480ff85983d45af454679c8ac131e00a",
+        "version": "7fcc691923c6997ab1b5a98b5b5b9a02f80a8a8065614facb4105538ae9fad51",
+        "signature": "a17e0eff38fb604e31d12bc4b2c81c3926fa21af5c60e7c36070496c76bee216",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
         "version": "b88fa9da9803d2240544217b8069bb310ec4a8de30b4a07e4ac5905cb3d9da8a",
         "signature": "025242f716e1af59c93fa74b194064de4d3f19b5d75c943842f1deee1a313a1f",
-        "affectsGlobalScope": false
-      },
-      "../src/register.ts": {
-        "version": "610158b460b55894f53074e1b01c5b37b521d63f461544a205d09b47811030d6",
-        "signature": "cfd2dfb411fe8aed9e3676d551c278d4b398faac6bce301e92f76ce6f233c39a",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -3425,17 +3420,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/i18next/index.d.ts"
-      ],
-      "../src/register.ts": [
-        "../node_modules/@sapphire/framework/dist/index.d.ts",
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/process.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/process.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../src/lib/In17n.ts"
       ]
     },
     "exportedModulesMap": {
@@ -5941,8 +5925,7 @@
       "../node_modules/typescript/lib/lib.esnext.string.d.ts",
       "../src/index.ts",
       "../src/lib/In17n.ts",
-      "../src/lib/utils/In17nHandler.ts",
-      "../src/register.ts"
+      "../src/lib/utils/In17nHandler.ts"
     ]
   },
   "version": "4.0.2"
