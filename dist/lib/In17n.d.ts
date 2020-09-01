@@ -3,7 +3,7 @@ import { Awaited } from '@sapphire/pieces';
 import type { ClientOptions, Message } from 'discord.js';
 import { InitOptions } from 'i18next';
 import { i18nextFsBackend } from 'i18next-fs-backend';
-export declare class In17n implements Plugin {
+export declare class In17n extends Plugin {
     static preInitializationHook(this: SapphireClient, _options: ClientOptions): void;
     static preLoginHook(this: SapphireClient, _options: ClientOptions): Promise<void>;
     static [preInitialization](this: SapphireClient, _options: ClientOptions): void;

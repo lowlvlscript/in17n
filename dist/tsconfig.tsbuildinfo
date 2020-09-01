@@ -917,8 +917,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/In17n.ts": {
-        "version": "7fcc691923c6997ab1b5a98b5b5b9a02f80a8a8065614facb4105538ae9fad51",
-        "signature": "a17e0eff38fb604e31d12bc4b2c81c3926fa21af5c60e7c36070496c76bee216",
+        "version": "9d455361ee63329d9706703472ad2acbedbc6afbbf68419e64fb8f42a70556e3",
+        "signature": "cbff9cb70e79a9601ee34e44e9ebd6a854805fb95e228b021c327b15a7e6e42b",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
