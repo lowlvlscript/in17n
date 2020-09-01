@@ -16,12 +16,12 @@ export class In17n implements Plugin {
 		await (this.i18n as In17nHandler).init();
 	}
 
-	public static [preInitialization](scopedThis: SapphireClient, options: ClientOptions): void {
-		return this.preInitializationHook.call(scopedThis, options);
+	public static [preInitialization](this: SapphireClient, _options: ClientOptions): void {
+		this.i18n = new In17nHandler(this);
 	}
 
-	public static [preLogin](scopedThis: SapphireClient, options: ClientOptions): Promise<void> {
-		return this.preLoginHook.call(scopedThis, options);
+	public static async [preLogin](this: SapphireClient, _options: ClientOptions): Promise<void> {
+		await (this.i18n as In17nHandler).init();
 	}
 
 }
