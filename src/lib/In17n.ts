@@ -6,7 +6,7 @@ import { i18nextFsBackend } from 'i18next-fs-backend';
 import { In17nHandler } from './utils/In17nHandler';
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
-export class In17n implements Plugin {
+export class In17n extends Plugin {
 
 	public static preInitializationHook(this: SapphireClient, _options: ClientOptions) {
 		this.i18n = new In17nHandler(this);
