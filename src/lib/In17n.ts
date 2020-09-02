@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Plugin, preInitialization, preLogin, SapphireClient } from '@sapphire/framework';
 import { Awaited } from '@sapphire/pieces';
 import type { ClientOptions, Message } from 'discord.js';

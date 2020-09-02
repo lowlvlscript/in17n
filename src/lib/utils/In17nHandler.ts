@@ -45,7 +45,7 @@ export class In17nHandler implements IInternationalization {
 		return lang ?? message.guild?.preferredLocale ?? this.client.options.i18n?.defaultName ?? 'en-US';
 	}
 
-	public resolveValue(name: string, key: string, replace: Record<string, unknown>, options: TOptions<StringMap> = {}): Promise<string> {
+	public resolveValue(name: string, key: string, replace: Record<string, unknown>, options?: TOptions<StringMap>): Promise<string> {
 		if (!this.languagesLoaded) throw new UserError('In17nLanguagesNotLoaded', 'Cannot call this method until In17nHandler#init has been called');
 
 		const language = this.languages.get(name);

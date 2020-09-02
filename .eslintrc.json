@@ -1,6 +1,3 @@
 {
-	"extends": ["@quantumly"],
-	"rules": {
-		"@typescript-eslint/no-unused-vars": 0
-	}
+	"extends": ["@quantumly"]
 }
