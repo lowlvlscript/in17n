@@ -201,6 +201,11 @@
         "signature": "cd6efb9467a8b6338ece2e2855e37765700f2cd061ca54b01b33878cf5c7677e",
         "affectsGlobalScope": true
       },
+      "../node_modules/tslib/tslib.d.ts": {
+        "version": "9eb0ae9fa333acfc2dcbe6a7eaa2ab8be46b97ca259982c797c39167823235d5",
+        "signature": "9eb0ae9fa333acfc2dcbe6a7eaa2ab8be46b97ca259982c797c39167823235d5",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@discordjs/collection/dist/index.d.ts": {
         "version": "7be7f76b784383fa84812ca7eb8ad10315c9d482c0d25f178645365405509d44",
         "signature": "7be7f76b784383fa84812ca7eb8ad10315c9d482c0d25f178645365405509d44",
@@ -912,18 +917,23 @@
         "affectsGlobalScope": false
       },
       "../src/lib/utils/In17nHandler.ts": {
-        "version": "2b2936b0a6df3ad9dc5fc0137f32347bf6a380fd533043b2a145d3528f34806f",
+        "version": "66b24f1806cbb0c270f8723c128e8291c9e7420724db6573166bdcfdb0f261f1",
         "signature": "8394a1fdb2ae07f44e5c6622f23c216e411d8716ceb4615eff801208e511f9ff",
         "affectsGlobalScope": false
       },
       "../src/lib/In17n.ts": {
-        "version": "9d455361ee63329d9706703472ad2acbedbc6afbbf68419e64fb8f42a70556e3",
+        "version": "22cdba7c39666df16513ba04d1cc047abf259b1d94f7fe60dc1634e186c4ff41",
         "signature": "cbff9cb70e79a9601ee34e44e9ebd6a854805fb95e228b021c327b15a7e6e42b",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
         "version": "b88fa9da9803d2240544217b8069bb310ec4a8de30b4a07e4ac5905cb3d9da8a",
         "signature": "025242f716e1af59c93fa74b194064de4d3f19b5d75c943842f1deee1a313a1f",
+        "affectsGlobalScope": false
+      },
+      "../src/register.ts": {
+        "version": "3290cb8d391cd8542d4ab838b9b0937982907865cc618e6149043444c628167e",
+        "signature": "9662bcac2cf37add7b1cc01a4f5249868eb7cafb6792cda6698ae19eef38fe99",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -1104,6 +1114,8 @@
       "composite": true,
       "esModuleInterop": true,
       "downlevelIteration": true,
+      "importHelpers": true,
+      "noEmitHelpers": true,
       "configFilePath": "../src/tsconfig.json"
     },
     "referencedMap": {
@@ -3017,6 +3029,15 @@
         "../node_modules/lexure/dist/types/option.d.ts",
         "../node_modules/lexure/dist/types/result.d.ts"
       ],
+      "../node_modules/tslib/tslib.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/process.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -3420,6 +3441,17 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/i18next/index.d.ts"
+      ],
+      "../src/register.ts": [
+        "../node_modules/@sapphire/framework/dist/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/process.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/index.ts"
       ]
     },
     "exportedModulesMap": {
@@ -5333,6 +5365,15 @@
         "../node_modules/lexure/dist/types/option.d.ts",
         "../node_modules/lexure/dist/types/result.d.ts"
       ],
+      "../node_modules/tslib/tslib.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/process.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -5708,6 +5749,9 @@
         "../node_modules/@sapphire/framework/dist/index.d.ts",
         "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/i18next/index.d.ts"
+      ],
+      "../src/register.ts": [
+        "../src/index.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -5883,6 +5927,7 @@
       "../node_modules/lexure/dist/types/tokens.d.ts",
       "../node_modules/lexure/dist/types/unordered.d.ts",
       "../node_modules/lexure/dist/types/util.d.ts",
+      "../node_modules/tslib/tslib.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
       "../node_modules/typescript/lib/lib.es2015.core.d.ts",
       "../node_modules/typescript/lib/lib.es2015.d.ts",
@@ -5925,7 +5970,8 @@
       "../node_modules/typescript/lib/lib.esnext.string.d.ts",
       "../src/index.ts",
       "../src/lib/In17n.ts",
-      "../src/lib/utils/In17nHandler.ts"
+      "../src/lib/utils/In17nHandler.ts",
+      "../src/register.ts"
     ]
   },
   "version": "4.0.2"

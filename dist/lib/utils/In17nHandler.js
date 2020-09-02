@@ -1,15 +1,13 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.In17nHandler = void 0;
+const tslib_1 = require("tslib");
 /* eslint-disable @typescript-eslint/naming-convention */
 const framework_1 = require("@sapphire/framework");
 const discord_js_1 = require("discord.js");
 const RootDir_1 = require("@sapphire/framework/dist/lib/utils/RootDir");
-const i18next_1 = __importDefault(require("i18next"));
-const i18next_fs_backend_1 = __importDefault(require("i18next-fs-backend"));
+const i18next_1 = tslib_1.__importDefault(require("i18next"));
+const i18next_fs_backend_1 = tslib_1.__importDefault(require("i18next-fs-backend"));
 const path_1 = require("path");
 const utilities_1 = require("@sapphire/utilities");
 const fs_1 = require("fs");
@@ -44,7 +42,7 @@ class In17nHandler {
         const lang = await this.client.fetchLanguage(message);
         return lang ?? message.guild?.preferredLocale ?? this.client.options.i18n?.defaultName ?? 'en-US';
     }
-    resolveValue(name, key, replace, options = {}) {
+    resolveValue(name, key, replace, options) {
         if (!this.languagesLoaded)
             throw new framework_1.UserError('In17nLanguagesNotLoaded', 'Cannot call this method until In17nHandler#init has been called');
         const language = this.languages.get(name);

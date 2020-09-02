@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.In17n = void 0;
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const framework_1 = require("@sapphire/framework");
 const In17nHandler_1 = require("./utils/In17nHandler");
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
