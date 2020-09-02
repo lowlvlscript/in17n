@@ -6,7 +6,9 @@
 		"composite": true,
 		"esModuleInterop": true,
 		"preserveConstEnums": true,
-		"downlevelIteration": true
+		"downlevelIteration": true,
+		"importHelpers": true,
+		"noEmitHelpers": true
 	},
 	"include": ["."]
 }

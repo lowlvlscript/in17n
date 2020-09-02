@@ -49,6 +49,8 @@ jobs:
           yarn build
           echo -e "\n# Move the generated dist to the newly-checked-out repo, to be committed and pushed"
           mv package.json out/package.json
+          mv register.js out/register.js
+          mv register.d.ts out/register.d.ts
           rsync -vau dist out/
           echo -e "\n# Commit and push"
           cd out
