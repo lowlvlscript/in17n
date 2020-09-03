@@ -13,18 +13,20 @@ export class In17nHandler implements IInternationalization {
 	public languagesLoaded = false;
 	public languages!: Collection<string, TFunction>;
 
-	private readonly languagesDir: string = join(getRootDirectory(), 'languages');
+	private readonly languagesDir: string;
 	private readonly backendOptions: i18nextFsBackend.i18nextFsBackendOptions;
 
 	public constructor(private readonly client: SapphireClient) {
+		this.languagesDir = this.client.options.i18n?.languageDirectory ?? join(getRootDirectory(), 'languages');
+
 		this.backendOptions = mergeDefault({
 			loadPath: join(this.languagesDir, '{{lng}}', '{{ns}}.json'),
 			addPath: this.languagesDir
 		} as i18nextFsBackend.i18nextFsBackendOptions, this.client.options.i18n?.backend);
 	}
 
-	public async init(walkDir?: string) {
-		const { namespaces, languages } = await this.walkLanguageDirectory(walkDir ?? this.languagesDir);
+	public async init() {
+		const { namespaces, languages } = await this.walkLanguageDirectory(this.languagesDir);
 
 		i18next.use(Backend);
 		await i18next.init(mergeDefault({
@@ -33,6 +35,7 @@ export class In17nHandler implements IInternationalization {
 			initImmediate: false,
 			interpolation: { escapeValue: false },
 			load: 'all',
+			defaultNS: 'default',
 			ns: namespaces,
 			preload: languages
 		} as InitOptions, this.client.options.i18n?.i18next));
