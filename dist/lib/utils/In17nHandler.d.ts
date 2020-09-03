@@ -8,7 +8,7 @@ export declare class In17nHandler implements IInternationalization {
     private readonly languagesDir;
     private readonly backendOptions;
     constructor(client: SapphireClient);
-    init(walkDir?: string): Promise<void>;
+    init(): Promise<void>;
     resolveNameFromMessage(message: Message): Promise<string>;
     resolveValue(name: string, key: string, replace: Record<string, unknown>, options?: TOptions<StringMap>): Promise<string>;
     private walkLanguageDirectory;

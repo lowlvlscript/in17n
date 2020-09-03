@@ -15,23 +15,26 @@ class In17nHandler {
     client;
     languagesLoaded = false;
     languages;
-    languagesDir = path_1.join(RootDir_1.getRootDirectory(), 'languages');
+    languagesDir;
     backendOptions;
     constructor(client) {
         this.client = client;
+        this.languagesDir = this.client.options.i18n?.languageDirectory ?? path_1.join(RootDir_1.getRootDirectory(), 'languages');
         this.backendOptions = utilities_1.mergeDefault({
             loadPath: path_1.join(this.languagesDir, '{{lng}}', '{{ns}}.json'),
             addPath: this.languagesDir
         }, this.client.options.i18n?.backend);
     }
-    async init(walkDir) {
-        const { namespaces, languages } = await this.walkLanguageDirectory(walkDir ?? this.languagesDir);
+    async init() {
+        const { namespaces, languages } = await this.walkLanguageDirectory(this.languagesDir);
         i18next_1.default.use(i18next_fs_backend_1.default);
         await i18next_1.default.init(utilities_1.mergeDefault({
             backend: this.backendOptions,
             fallbackLng: 'en-US',
             initImmediate: false,
+            interpolation: { escapeValue: false },
             load: 'all',
+            defaultNS: 'default',
             ns: namespaces,
             preload: languages
         }, this.client.options.i18n?.i18next));
