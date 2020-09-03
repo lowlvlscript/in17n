@@ -31,6 +31,7 @@ export class In17nHandler implements IInternationalization {
 			backend: this.backendOptions,
 			fallbackLng: 'en-US',
 			initImmediate: false,
+			interpolation: { escapeValue: false },
 			load: 'all',
 			ns: namespaces,
 			preload: languages
