@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/SapphireCommunityPlugins/localization/compare/v0.1.0...v0.2.0) (2020-09-03)
+
+
+### Features
+
+* **options:** custom languages directory ([1825289](https://github.com/SapphireCommunityPlugins/localization/commit/18252894a73a82bc7c0e50addabdf163fa558489))
+
+
+### Bug Fixes
+
+* disable string escapes ([d62a1dd](https://github.com/SapphireCommunityPlugins/localization/commit/d62a1dd8263c8edaf97bc29bb9d9ac99bccd3161))
+
 ## 0.1.0 (2020-09-02)
 
 
