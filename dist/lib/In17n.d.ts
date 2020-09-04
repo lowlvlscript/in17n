@@ -4,8 +4,6 @@ import type { ClientOptions, Message } from 'discord.js';
 import { InitOptions } from 'i18next';
 import { i18nextFsBackend } from 'i18next-fs-backend';
 export declare class In17n extends Plugin {
-    static preInitializationHook(this: SapphireClient, _options: ClientOptions): void;
-    static preLoginHook(this: SapphireClient, _options: ClientOptions): Promise<void>;
     static [preInitialization](this: SapphireClient, _options: ClientOptions): void;
     static [preLogin](this: SapphireClient, _options: ClientOptions): Promise<void>;
 }
@@ -22,6 +20,7 @@ declare module '@sapphire/framework' {
         backend?: i18nextFsBackend.i18nextFsBackendOptions;
         i18next?: InitOptions;
         languageDirectory?: string;
+        missingKey?: string;
     }
 }
 //# sourceMappingURL=In17n.d.ts.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"register.js","sourceRoot":"","sources":["../src/register.ts"],"names":[],"mappings":";;;AAAA,mDAAqD;AACrD,mCAAgC;AAEhC,0BAAc,CAAC,GAAG,CAAC,aAAK,CAAC,CAAC;AAE1B,kDAAwB"}
+{"version":3,"file":"register.js","sourceRoot":"","sources":["../src/register.ts"],"names":[],"mappings":";;;AAAA,mDAAkF;AAClF,mCAAgC;AAEhC,0BAAc,CAAC,OAAO,CAAC,6BAA6B,CAAC,aAAK,CAAC,6BAAiB,CAAC,EAAE,wBAAwB,CAAC,CAAC;AACzG,0BAAc,CAAC,OAAO,CAAC,oBAAoB,CAAC,aAAK,CAAC,oBAAQ,CAAC,EAAE,eAAe,CAAC,CAAC;AAE9E,kDAAwB"}

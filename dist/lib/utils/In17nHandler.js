@@ -12,20 +12,46 @@ const path_1 = require("path");
 const utilities_1 = require("@sapphire/utilities");
 const fs_1 = require("fs");
 class In17nHandler {
-    client;
-    languagesLoaded = false;
-    languages;
-    languagesDir;
-    backendOptions;
     constructor(client) {
-        this.client = client;
-        this.languagesDir = this.client.options.i18n?.languageDirectory ?? path_1.join(RootDir_1.getRootDirectory(), 'languages');
+        var _a, _b, _c;
+        Object.defineProperty(this, "client", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: client
+        });
+        Object.defineProperty(this, "languagesLoaded", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: false
+        });
+        Object.defineProperty(this, "languages", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "languagesDir", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        Object.defineProperty(this, "backendOptions", {
+            enumerable: true,
+            configurable: true,
+            writable: true,
+            value: void 0
+        });
+        this.languagesDir = (_b = (_a = this.client.options.i18n) === null || _a === void 0 ? void 0 : _a.languageDirectory) !== null && _b !== void 0 ? _b : path_1.join(RootDir_1.getRootDirectory(), 'languages');
         this.backendOptions = utilities_1.mergeDefault({
             loadPath: path_1.join(this.languagesDir, '{{lng}}', '{{ns}}.json'),
             addPath: this.languagesDir
-        }, this.client.options.i18n?.backend);
+        }, (_c = this.client.options.i18n) === null || _c === void 0 ? void 0 : _c.backend);
     }
     async init() {
+        var _a;
         const { namespaces, languages } = await this.walkLanguageDirectory(this.languagesDir);
         i18next_1.default.use(i18next_fs_backend_1.default);
         await i18next_1.default.init(utilities_1.mergeDefault({
@@ -37,21 +63,26 @@ class In17nHandler {
             defaultNS: 'default',
             ns: namespaces,
             preload: languages
-        }, this.client.options.i18n?.i18next));
+        }, (_a = this.client.options.i18n) === null || _a === void 0 ? void 0 : _a.i18next));
         this.languages = new discord_js_1.Collection(languages.map(item => [item, i18next_1.default.getFixedT(item)]));
         this.languagesLoaded = true;
     }
     async resolveNameFromMessage(message) {
+        var _a, _b, _c, _d;
         const lang = await this.client.fetchLanguage(message);
-        return lang ?? message.guild?.preferredLocale ?? this.client.options.i18n?.defaultName ?? 'en-US';
+        return (_d = (_b = lang !== null && lang !== void 0 ? lang : (_a = message.guild) === null || _a === void 0 ? void 0 : _a.preferredLocale) !== null && _b !== void 0 ? _b : (_c = this.client.options.i18n) === null || _c === void 0 ? void 0 : _c.defaultName) !== null && _d !== void 0 ? _d : 'en-US';
     }
     resolveValue(name, key, replace, options) {
+        var _a, _b;
         if (!this.languagesLoaded)
             throw new framework_1.UserError('In17nLanguagesNotLoaded', 'Cannot call this method until In17nHandler#init has been called');
         const language = this.languages.get(name);
         if (!language)
             throw new framework_1.UserError('In17nLanguageNotFound', 'Invalid language provided');
-        return language(key, utilities_1.mergeDefault({ defaultValue: language('default:DEFAULT', { fallbackLng: 'en-US', replace: { key } }), replace }, options));
+        return language(key, utilities_1.mergeDefault({
+            defaultValue: language((_b = (_a = this.client.options.i18n) === null || _a === void 0 ? void 0 : _a.missingKey) !== null && _b !== void 0 ? _b : 'default:default', { replace: { key } }),
+            replace
+        }, options));
     }
     async walkLanguageDirectory(dir, namespaces = [], folderName = '') {
         const files = await fs_1.promises.readdir(dir);

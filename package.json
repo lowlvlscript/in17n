@@ -1,7 +1,8 @@
 {
 	"name": "@scp/in17n",
 	"description": "",
-	"version": "0.2.0",
+	"license": "Apache-2.0",
+	"version": "0.3.1",
 	"main": "dist/index.js",
 	"author": "QuantumlyTangled <yo@quantumlytangled.com> (https://quantumlytangled.com)",
 	"scripts": {
@@ -53,7 +54,7 @@
 		"register.d.ts"
 	],
 	"engines": {
-		"node": ">=14",
+		"node": ">=12",
 		"npm": ">=6"
 	},
 	"husky": {

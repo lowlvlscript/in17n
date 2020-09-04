@@ -917,13 +917,13 @@
         "affectsGlobalScope": false
       },
       "../src/lib/utils/In17nHandler.ts": {
-        "version": "6d8a929b20ef3153773122ae0be5554e55ea8aecc77c59c8c7a54ee28e35ff19",
+        "version": "5769020a44689502b36791eea9d2413430fbd8c87b3028510d4c5629893e594c",
         "signature": "32ddc5219521e0e4b6a267bc2b21abbbd68e1f09e2e09f9aa84302e44001a239",
         "affectsGlobalScope": false
       },
       "../src/lib/In17n.ts": {
-        "version": "b437b6cf629dd690d254928187bf08859c216c3dbe8103e4e6fed2c3c29fbaea",
-        "signature": "1e19c939c527a79170ba595de6293de8389b91f5944774dbaa5b8f99c6a1b7af",
+        "version": "a0667d6dc9c1a412a991aab0903e9814b446ad6a2fb3f834341fcaad8ded6028",
+        "signature": "b36bdb71697562bb49644177b500338a1aa2b01fd425540ff1f7f59e961b838c",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
@@ -932,7 +932,7 @@
         "affectsGlobalScope": false
       },
       "../src/register.ts": {
-        "version": "3290cb8d391cd8542d4ab838b9b0937982907865cc618e6149043444c628167e",
+        "version": "86d85198b2afe7746d5915b4ad56f8ebe7e4b93321eed58044fa1d1555d0db77",
         "signature": "9662bcac2cf37add7b1cc01a4f5249868eb7cafb6792cda6698ae19eef38fe99",
         "affectsGlobalScope": false
       },
@@ -1103,7 +1103,7 @@
       "resolveJsonModule": true,
       "sourceMap": true,
       "strict": true,
-      "target": 99,
+      "target": 6,
       "preserveConstEnums": true,
       "useDefineForClassFields": true,
       "declaration": true,
