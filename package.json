@@ -1,6 +1,7 @@
 {
 	"name": "@scp/in17n",
 	"description": "",
+	"license": "apache-2.0",
 	"version": "0.2.0",
 	"main": "dist/index.js",
 	"author": "QuantumlyTangled <yo@quantumlytangled.com> (https://quantumlytangled.com)",
