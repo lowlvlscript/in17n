@@ -55,7 +55,11 @@ export class In17nHandler implements IInternationalization {
 		const language = this.languages.get(name);
 		if (!language) throw new UserError('In17nLanguageNotFound', 'Invalid language provided');
 
-		return language(key, mergeDefault({ defaultValue: language('default:DEFAULT', { fallbackLng: 'en-US', replace: { key } }), replace }, options));
+		return language(key,
+			mergeDefault({
+				defaultValue: language(this.client.options.i18n?.missingKey ?? 'default:default', { replace: { key } }),
+				replace
+			}, options));
 	}
 
 	private async walkLanguageDirectory(dir: string, namespaces: string[] = [], folderName = '') {

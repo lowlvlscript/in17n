@@ -42,5 +42,6 @@ declare module '@sapphire/framework' {
 		backend?: i18nextFsBackend.i18nextFsBackendOptions;
 		i18next?: InitOptions;
 		languageDirectory?: string;
+		missingKey?: string;
 	}
 }
