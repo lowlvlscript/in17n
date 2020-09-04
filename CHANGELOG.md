@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/SapphireCommunityPlugins/localization/compare/v0.2.0...v0.3.0) (2020-09-04)
+
+
+### Features
+
+* configurable default key ([4ffa4fb](https://github.com/SapphireCommunityPlugins/localization/commit/4ffa4fb2d6d7df11c7ca68228224b2ba998ca5e8))
+* de-bump node to v12 ([0e02fc8](https://github.com/SapphireCommunityPlugins/localization/commit/0e02fc8cafa14b4bce85017869d43a74eed0ebfb))
+* named plugin registers ([38f5b27](https://github.com/SapphireCommunityPlugins/localization/commit/38f5b279ee0d2746d47b0d56ddecc74fd8a718ea))
+
 ## [0.2.0](https://github.com/SapphireCommunityPlugins/localization/compare/v0.1.0...v0.2.0) (2020-09-03)
 
 
