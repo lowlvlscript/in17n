@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/SapphireCommunityPlugins/localization/compare/v0.3.0...v0.3.1) (2020-09-04)
+
+
+### Bug Fixes
+
+* use proper licence spdx ([94b6db5](https://github.com/SapphireCommunityPlugins/localization/commit/94b6db5656c6f14adf142dc1853b88af9c66b5a4))
+
 ## [0.3.0](https://github.com/SapphireCommunityPlugins/localization/compare/v0.2.0...v0.3.0) (2020-09-04)
 
 
