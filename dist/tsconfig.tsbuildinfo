@@ -317,8 +317,8 @@
         "affectsGlobalScope": false
       },
       "../node_modules/@types/node/ts3.1/crypto.d.ts": {
-        "version": "bc99370962c617000b3f66ba97426142bf49daa5467c081c64a57ad7bc6bcc14",
-        "signature": "bc99370962c617000b3f66ba97426142bf49daa5467c081c64a57ad7bc6bcc14",
+        "version": "c5cc5f3a1a963e05947bb1c823d06c3758e0d352c9a97afddc3fd5a6d5c955cd",
+        "signature": "c5cc5f3a1a963e05947bb1c823d06c3758e0d352c9a97afddc3fd5a6d5c955cd",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/node/ts3.1/dgram.d.ts": {
